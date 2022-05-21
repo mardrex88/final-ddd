@@ -9,6 +9,9 @@ public class AsesorId extends Identity {
         super(id);
     }
 
+    public AsesorId() {
+    }
+
     public static AsesorId of(String id) {
         return new AsesorId(id);
     }

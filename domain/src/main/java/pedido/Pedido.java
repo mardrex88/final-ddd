@@ -4,7 +4,10 @@ import Tarea.Tarea;
 import Tarea.values.TareaId;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
+import pedido.events.AsesorCreado;
 import pedido.events.PedidoCreado;
+import pedido.values.AsesorId;
+import pedido.values.Nombre;
 import pedido.values.PedidoId;
 
 import java.util.List;
@@ -34,13 +37,16 @@ public class Pedido  extends AggregateEvent<PedidoId> {
         return curso;
     }
 
+    public void agregarAsesor(Nombre nombre){
+        var asesorId = new AsesorId();
+        appendChange(new AsesorCreado(nombre,asesorId)).apply();
+    }
+
     public void agregarTarea(TareaId tareaId){
         this.tareas.add(tareaId);
     }
 
-    public void agregarAsesor(Asesor asesor){
-        this.asesor = asesor;
-    }
+
 
     public void agregarServicio(Servicio servicio){
         this.servicio = servicio;
