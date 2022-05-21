@@ -11,32 +11,37 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import pedido.commands.AgregarAsesor;
-import pedido.commands.CrearPedido;
+import pedido.commands.AgregarServicio;
 import pedido.events.AsesorCreado;
 import pedido.events.PedidoCreado;
+import pedido.events.ServicioCreado;
 import pedido.values.Nombre;
 import pedido.values.PedidoId;
+import pedido.values.Precio;
 
 import java.util.List;
 
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class AgregarAsesorUseCaseTest {
+public class AgregarServicioUseCaseTest {
 
     @InjectMocks
-    private AgregarAsesorUseCase useCase;
+    private AgregarServicioUseCase useCase;
 
     @Mock
     private DomainEventRepository repository;
 
     @Test
-    void agregarUnAsesorHappyPass(){
+    void agregarUnServicioHappyPass(){
 
         //arrange
         PedidoId pedidoId = PedidoId.of("0001");
-        Nombre nombre = new Nombre("Asesor 1");
-        var command = new AgregarAsesor(pedidoId,nombre,"Medellin");
+         String nombre = "Recoleccion y Entrega";
+         Double precioKm = 1000.0;
+         Precio precioBase = new Precio(7000.0);
+         String descripcion = "Servicio con dos tareas una para recoger y otra para entregar";
+        var command = new AgregarServicio(pedidoId, nombre, precioKm, precioBase, descripcion);
 
         when(repository.getEventsBy("0001")).thenReturn(history());
         useCase.addRepository(repository);
@@ -49,8 +54,8 @@ public class AgregarAsesorUseCaseTest {
                 .getDomainEvents();
 
         //Assert
-        var event = (AsesorCreado)events.get(0);
-        Assertions.assertEquals("Asesor 1", event.getNombre().value());
+        var event = (ServicioCreado)events.get(0);
+        Assertions.assertEquals("Servicio con dos tareas una para recoger y otra para entregar", event.getDescripcion());
     }
 
 

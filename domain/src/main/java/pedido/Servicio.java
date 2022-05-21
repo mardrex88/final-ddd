@@ -9,7 +9,7 @@ public class Servicio extends Entity<ServicioId> {
     protected String nombre;
     protected Double precioKm;
     protected Precio precioBase;
-    protected String Descripcion;
+    protected String descripcion;
 
 
     public Servicio(ServicioId entityId) {
@@ -21,6 +21,6 @@ public class Servicio extends Entity<ServicioId> {
         this.nombre = nombre;
         this.precioKm = precioKm;
         this.precioBase = precioBase;
-        Descripcion = descripcion;
+        this.descripcion = descripcion;
     }
 }

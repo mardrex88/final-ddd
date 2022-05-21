@@ -10,9 +10,5 @@
         <module name="domain" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="bussines" target="15" />
-      <module name="domain" target="15" />
-    </bytecodeTargetLevel>
   </component>
 </project>

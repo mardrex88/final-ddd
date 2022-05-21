@@ -8,6 +8,7 @@ import pedido.values.AsesorId;
 import pedido.values.Nombre;
 
 public class AgregarAsesorUseCase extends UseCase<RequestCommand<AgregarAsesor>, ResponseEvents> {
+
     @Override
     public void executeUseCase(RequestCommand<AgregarAsesor> agregarAsesorRequestCommand) {
 
@@ -15,7 +16,7 @@ public class AgregarAsesorUseCase extends UseCase<RequestCommand<AgregarAsesor>,
 
         var pedido =  Pedido.from(command.getPedidoId(),repository().getEventsBy(command.getPedidoId().value()));
 
-        pedido.agregarAsesor(command.getNombre());
+        pedido.agregarAsesor(command.getNombre(),command.getSede());
 
         emit().onResponse(new ResponseEvents(pedido.getUncommittedChanges()));
     }

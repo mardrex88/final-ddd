@@ -6,9 +6,8 @@ import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 import pedido.events.AsesorCreado;
 import pedido.events.PedidoCreado;
-import pedido.values.AsesorId;
-import pedido.values.Nombre;
-import pedido.values.PedidoId;
+import pedido.events.ServicioCreado;
+import pedido.values.*;
 
 import java.util.List;
 import java.util.Set;
@@ -32,15 +31,25 @@ public class Pedido  extends AggregateEvent<PedidoId> {
         subscribe(new PedidoEventChange(this));
     }
     public static Pedido from(PedidoId entityId, List<DomainEvent> events){
-        var curso = new Pedido(entityId);
-        events.forEach(curso::applyEvent);
-        return curso;
+        var pedido = new Pedido(entityId);
+        events.forEach(pedido::applyEvent);
+        return pedido;
     }
 
-    public void agregarAsesor(Nombre nombre){
+    public void agregarAsesor(Nombre nombre,String sede){
         var asesorId = new AsesorId();
-        appendChange(new AsesorCreado(nombre,asesorId)).apply();
+        appendChange(new AsesorCreado(nombre,asesorId,sede)).apply();
     }
+
+    public void actualizarSedeAsesor(AsesorId asesorId,String sede){
+
+    }
+
+    public void agregarServicio(String nombre, Double precioKm, Precio precioBase, String descripcion) {
+        var servicioId = new ServicioId();
+        appendChange(new ServicioCreado(servicioId, nombre, precioKm, precioBase, descripcion));
+    }
+
 
     public void agregarTarea(TareaId tareaId){
         this.tareas.add(tareaId);
@@ -48,10 +57,7 @@ public class Pedido  extends AggregateEvent<PedidoId> {
 
 
 
-    public void agregarServicio(Servicio servicio){
-        this.servicio = servicio;
 
-    }
     public void agregarCourier(Courier courier){
         this.courier = courier;
     }
