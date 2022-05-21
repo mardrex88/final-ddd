@@ -1,16 +1,14 @@
 package tarea;
 
-import pedido.PedidoEventChange;
-import pedido.values.ServicioId;
 import tarea.events.ContactoCreado;
+import tarea.events.DestinoCreado;
 import tarea.events.TareaCreada;
 import co.com.sofka.domain.generic.AggregateEvent;
-import tarea.values.ContactoId;
-import tarea.values.TareaId;
+import tarea.values.*;
 import co.com.sofka.domain.generic.DomainEvent;
-import tarea.values.Telefono;
 
 import java.util.List;
+
 
 public class Tarea  extends AggregateEvent<TareaId> {
 
@@ -39,11 +37,12 @@ public class Tarea  extends AggregateEvent<TareaId> {
 
     public void agregarContacto(Telefono telefono, String nombre){
             var contactoId = new ContactoId();
-          appendChange(new ContactoCreado(contactoId,telefono,nombre)).apply();
+            appendChange(new ContactoCreado(contactoId,telefono,nombre)).apply();
     }
 
-    public void agregarDestino(Destino destino){
-        this.destino = destino;
+    public void agregarDestino(Direccion direccion, Coordenadas coordenadas){
+        var destinoId = new DestinoId();
+        appendChange(new DestinoCreado(destinoId,direccion,coordenadas)).apply();
     }
 
 }

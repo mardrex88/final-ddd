@@ -8,7 +8,6 @@ public class Coordenadas implements ValueObject<Coordenadas.Pros> {
     private final Double longitud;
 
     public Coordenadas(Double latitud, Double longitud) {
-        //TODO:Agregar Validaciones
         this.latitud = latitud;
         this.longitud = longitud;
     }
