@@ -1,7 +1,6 @@
 package pedido;
 
-import Tarea.Tarea;
-import Tarea.values.TareaId;
+import tarea.values.TareaId;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 import pedido.events.AsesorCreado;
@@ -47,7 +46,7 @@ public class Pedido  extends AggregateEvent<PedidoId> {
 
     public void agregarServicio(String nombre, Double precioKm, Precio precioBase, String descripcion) {
         var servicioId = new ServicioId();
-        appendChange(new ServicioCreado(servicioId, nombre, precioKm, precioBase, descripcion));
+        appendChange(new ServicioCreado(servicioId, nombre, precioKm, precioBase, descripcion)).apply();
     }
 
 

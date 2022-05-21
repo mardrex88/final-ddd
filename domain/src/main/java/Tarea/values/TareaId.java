@@ -1,14 +1,13 @@
-package Tarea.values;
+package tarea.values;
 
 import co.com.sofka.domain.generic.Identity;
 import co.com.sofka.domain.generic.ValueObject;
 
-public class TareaId extends Identity implements ValueObject<String> {
+public class TareaId extends Identity {
     public TareaId(String uuid) {
         super(uuid);
     }
-    @Override
-    public String value() {
-        return null;
-    }
+
+    public static TareaId of(String id){ return new TareaId(id);}
+
 }

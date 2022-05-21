@@ -1,8 +1,8 @@
-package Tarea;
+package tarea;
 
-import Tarea.values.Coordenadas;
-import Tarea.values.DestinoId;
-import Tarea.values.Direccion;
+import tarea.values.Coordenadas;
+import tarea.values.DestinoId;
+import tarea.values.Direccion;
 import co.com.sofka.domain.generic.Entity;
 
 public class Destino extends Entity<DestinoId>  {

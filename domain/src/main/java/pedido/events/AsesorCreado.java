@@ -4,7 +4,6 @@ import co.com.sofka.domain.generic.DomainEvent;
 import pedido.values.AsesorId;
 import pedido.values.Nombre;
 
-import java.util.UUID;
 
 public class AsesorCreado extends DomainEvent {
     private final Nombre nombre;

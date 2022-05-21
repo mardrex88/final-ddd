@@ -1,7 +1,6 @@
-package Tarea.values;
+package tarea.values;
 
 import co.com.sofka.domain.generic.ValueObject;
-import com.sun.jdi.Value;
 
 public class Coordenadas implements ValueObject<Coordenadas.Pros> {
 

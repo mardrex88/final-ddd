@@ -1,4 +1,4 @@
-package Tarea.values;
+package tarea.values;
 
 import co.com.sofka.domain.generic.Identity;
 

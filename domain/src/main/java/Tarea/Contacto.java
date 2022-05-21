@@ -1,12 +1,12 @@
-package Tarea;
+package tarea;
 
-import Tarea.values.ContactoId;
-import Tarea.values.Telefono;
+import tarea.values.ContactoId;
+import tarea.values.Telefono;
 import co.com.sofka.domain.generic.Entity;
 
 public class Contacto extends Entity<ContactoId> {
-    private Telefono telefono;
-    private final String nombre;
+    protected Telefono telefono;
+    protected String nombre;
 
     public Contacto(ContactoId entityId, Telefono telefono, String nombre) {
         super(entityId);

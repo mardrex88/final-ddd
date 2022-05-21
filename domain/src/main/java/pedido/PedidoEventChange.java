@@ -12,7 +12,6 @@ public class PedidoEventChange extends EventChange {
     public PedidoEventChange(Pedido pedido) {
         apply((PedidoCreado event) -> {
             pedido.tareas = new HashSet<>();
-
         });
 
         apply((AsesorCreado event) -> {
