@@ -11,18 +11,10 @@ c
 3domain/src/main/java/tarea/commands/CrearTarea.java,3\e\3e4c522c922817a1232a6eca9c98aa02354a2f08
 Y
 )domain/src/main/java/pedido/Servicio.java,d\1\d14e65546a247e7ace32a94f8bc0679b0d53540e
-i
-9domain/src/main/java/pedido/commands/AgregarServicio.java,a\b\ab4453855f2bda7de494822b6bfefc27b724dda7
 m
 =bussines/src/test/java/pedido/AgregarServicioUseCaseTest.java,6\2\627335b524914faeaab1b78a53cdbe7d4a2d4b41
 i
 9bussines/src/main/java/pedido/AgregarServicioUseCase.java,4\0\408eee7b780ce7112cc5934c660141a18ab02e71
-b
-2domain/src/main/java/pedido/values/ServicioId.java,1\4\145ee0a51300989321f5cec74df98f6daf93d367
-f
-6domain/src/main/java/pedido/events/ServicioCreado.java,d\a\dab814e29425479c33f28de25b4bd80ce83b6f89
-^
-.domain/src/main/java/tarea/values/TareaId.java,0\1\011925415ff793cd30db45785cc0038b983592a1
 `
 0domain/src/main/java/pedido/values/PedidoId.java,1\b\1b983e3d7502cc1aa454241ff4b05c44860fcb65
 g
@@ -35,8 +27,6 @@ W
 'domain/src/main/java/pedido/Asesor.java,6\f\6f5156f590290d2b6bb60a424cfb3751127d239b
 i
 9bussines/src/test/java/pedido/CrearPedidoUseCaseTest.java,5\5\557c0015cbfd127cec01e6a9737d802eb07b4c24
-k
-;bussines/src/test/java/pedido/AgregarAsesorUseCaseTest.java,2\5\253598a1e9a85a01343bcda719e9b741bc00365e
 c
 3bussines/src/main/java/tarea/CrearTareaUseCase.java,0\4\04593cf0d66491d1f641801aa47e433ef4e5bbca
 b

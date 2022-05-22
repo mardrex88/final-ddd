@@ -1,12 +1,10 @@
 package pedido;
 
-import pedido.events.CourierCreado;
+import pedido.events.*;
+import tarea.Tarea;
 import tarea.values.TareaId;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
-import pedido.events.AsesorCreado;
-import pedido.events.PedidoCreado;
-import pedido.events.ServicioCreado;
 import pedido.values.*;
 
 import java.util.List;
@@ -48,8 +46,8 @@ public class Pedido  extends AggregateEvent<PedidoId> {
     }
 
 
-    public void agregarTarea(TareaId tareaId){
-        this.tareas.add(tareaId);
+    public void agregarTarea(TareaId tareaId,String estado){
+         appendChange(new TareaCreada(tareaId,estado)).apply();
     }
 
 
