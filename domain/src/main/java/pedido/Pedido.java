@@ -1,5 +1,9 @@
 package pedido;
 
+import factura.Cliente;
+import factura.Factura;
+import factura.events.FacturaCreada;
+import factura.values.FacturaId;
 import pedido.events.*;
 import tarea.Tarea;
 import tarea.values.TareaId;
@@ -8,6 +12,7 @@ import co.com.sofka.domain.generic.DomainEvent;
 import pedido.values.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 
@@ -18,6 +23,7 @@ public class Pedido  extends AggregateEvent<PedidoId> {
     protected Courier courier;
     protected Set<TareaId> tareas;
     protected String estado;
+    protected Map<FacturaId, Factura> factura;
 
     public Pedido(PedidoId entityId,String estado) {
         super(entityId);
@@ -47,7 +53,7 @@ public class Pedido  extends AggregateEvent<PedidoId> {
 
 
     public void agregarTarea(TareaId tareaId,String estado){
-         appendChange(new TareaCreada(tareaId,estado)).apply();
+        appendChange(new TareaCreada(tareaId,estado)).apply();
     }
 
 
@@ -57,7 +63,9 @@ public class Pedido  extends AggregateEvent<PedidoId> {
         appendChange(new CourierCreado(courierId,nombre,vehiculo)).apply();
     }
 
-    public String estado() {
-        return estado;
+
+    public void crearFactura(PedidoId pedidoId, Cliente cliente) {
+        var facturaId = new FacturaId();
+        appendChange(new FacturaCreada(pedidoId,cliente,facturaId)).apply();
     }
 }

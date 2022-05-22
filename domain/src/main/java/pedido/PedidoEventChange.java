@@ -1,6 +1,9 @@
 package pedido;
 
 import co.com.sofka.domain.generic.EventChange;
+import factura.Factura;
+import factura.events.FacturaCreada;
+import factura.values.FacturaId;
 import pedido.events.AsesorCreado;
 import pedido.events.CourierCreado;
 import pedido.events.PedidoCreado;
@@ -35,6 +38,7 @@ public class PedidoEventChange extends EventChange {
 
             pedido.courier = courier;
         });
+
     }
 
 

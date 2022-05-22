@@ -3,13 +3,13 @@ package pedido.events;
 import co.com.sofka.domain.generic.DomainEvent;
 import tarea.values.TareaId;
 
-public class TareaCreada extends DomainEvent {
+public class TareaAgregada extends DomainEvent {
 
-  private final TareaId tareaId;
-  private final String estado;
+    private final TareaId tareaId;
+    private final String estado;
 
-    public TareaCreada(TareaId tareaId, String estado) {
-        super("TareaCreada");
+    public TareaAgregada(TareaId tareaId, String estado) {
+        super("TareaAgregada");
         this.tareaId = tareaId;
         this.estado = estado;
     }

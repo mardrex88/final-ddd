@@ -2,8 +2,11 @@ package factura;
 
 import co.com.sofka.domain.generic.DomainEvent;
 import factura.events.FacturaCreada;
+import factura.events.PedidoAgregado;
 import factura.values.FacturaId;
 import co.com.sofka.domain.generic.AggregateEvent;
+import pedido.Pedido;
+import pedido.events.TareaCreada;
 import pedido.values.Nombre;
 import pedido.values.PedidoId;
 
@@ -35,7 +38,7 @@ public class Factura extends AggregateEvent<FacturaId> {
         return factura;
     }
 
-    public void agregarPago(Nombre nombre, String sede){
-
+    public void agregarPedido(PedidoId pedidoId, Cliente cliente, FacturaId facturaId){
+        appendChange(new FacturaCreada(pedidoId,cliente,facturaId)).apply();
     }
 }

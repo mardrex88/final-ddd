@@ -10,11 +10,7 @@ import factura.values.Identificacion;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import pedido.CrearPedidoUseCase;
-import pedido.commands.CrearPedido;
-import pedido.events.PedidoCreado;
 import pedido.values.Nombre;
-import pedido.values.PedidoId;
 
 public class CrearFacturaUseCaseTest {
 
@@ -27,11 +23,9 @@ public class CrearFacturaUseCaseTest {
     public void crearFacturaHappyPass(){
         //arr
         FacturaId facturaId = FacturaId.of("Fact1");
-
         Nombre nombreCliente = new Nombre("Nombre Cliente");
         Identificacion identificacion = new Identificacion("123456789","Cedula");
         Cliente cliente  = new Cliente(new ClienteId(),nombreCliente,identificacion);
-
 
         var command = new CrearFactura(facturaId,cliente);
 

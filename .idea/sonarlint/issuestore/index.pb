@@ -7,10 +7,6 @@ e
 5bussines/src/main/java/pedido/CrearPedidoUseCase.java,8\9\893d0a80b68f1f9e5491f75e37ab7c73208b0063
 c
 3domain/src/main/java/tarea/commands/CrearTarea.java,3\e\3e4c522c922817a1232a6eca9c98aa02354a2f08
-m
-=bussines/src/test/java/pedido/AgregarServicioUseCaseTest.java,6\2\627335b524914faeaab1b78a53cdbe7d4a2d4b41
-i
-9bussines/src/main/java/pedido/AgregarServicioUseCase.java,4\0\408eee7b780ce7112cc5934c660141a18ab02e71
 g
 7bussines/src/test/java/tarea/CrearTareaUseCaseTest.java,4\6\46cc4c5b616365ec8b303659d43743aae7a0cebe
 W
