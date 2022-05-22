@@ -1,6 +1,6 @@
-package Factura;
+package factura;
 
-import Factura.values.FacturaId;
+import factura.values.FacturaId;
 import co.com.sofka.domain.generic.AggregateEvent;
 
 public class Factura extends AggregateEvent<FacturaId> {

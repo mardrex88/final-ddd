@@ -14,4 +14,8 @@ public class Contacto extends Entity<ContactoId> {
         this.nombre = nombre;
     }
 
+
+    public void actualizarTelefono(Telefono telefono){
+        this.telefono= telefono;
+    }
 }

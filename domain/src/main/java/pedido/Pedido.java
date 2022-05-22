@@ -1,5 +1,6 @@
 package pedido;
 
+import pedido.events.CourierCreado;
 import tarea.values.TareaId;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
@@ -40,9 +41,6 @@ public class Pedido  extends AggregateEvent<PedidoId> {
         appendChange(new AsesorCreado(nombre,asesorId,sede)).apply();
     }
 
-    public void actualizarSedeAsesor(AsesorId asesorId,String sede){
-
-    }
 
     public void agregarServicio(String nombre, Double precioKm, Precio precioBase, String descripcion) {
         var servicioId = new ServicioId();
@@ -56,9 +54,9 @@ public class Pedido  extends AggregateEvent<PedidoId> {
 
 
 
-
-    public void agregarCourier(Courier courier){
-        this.courier = courier;
+    public void agregarCourier(Nombre nombre, Vehiculo vehiculo){
+        var courierId = new CourierId();
+        appendChange(new CourierCreado(courierId,nombre,vehiculo)).apply();
     }
 
     public String estado() {

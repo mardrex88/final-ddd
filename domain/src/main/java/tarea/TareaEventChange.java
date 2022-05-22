@@ -4,6 +4,7 @@ import tarea.events.ContactoCreado;
 import tarea.events.DestinoCreado;
 import tarea.events.TareaCreada;
 import co.com.sofka.domain.generic.EventChange;
+import tarea.events.TelefonoContactoActualizado;
 
 public class TareaEventChange extends EventChange {
     public TareaEventChange(Tarea tarea) {
@@ -21,6 +22,10 @@ public class TareaEventChange extends EventChange {
             var destinoId = event.getDestinoId();
             var destino = new Destino(destinoId,event.getDireccion(), event.getCoordenadas());
             tarea.destino = destino;
+        });
+
+        apply((TelefonoContactoActualizado event) -> {
+            tarea.contacto.actualizarTelefono(event.getTelefono());
         });
     }
 

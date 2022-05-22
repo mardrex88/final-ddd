@@ -4,6 +4,7 @@ import tarea.events.ContactoCreado;
 import tarea.events.DestinoCreado;
 import tarea.events.TareaCreada;
 import co.com.sofka.domain.generic.AggregateEvent;
+import tarea.events.TelefonoContactoActualizado;
 import tarea.values.*;
 import co.com.sofka.domain.generic.DomainEvent;
 
@@ -43,6 +44,10 @@ public class Tarea  extends AggregateEvent<TareaId> {
     public void agregarDestino(Direccion direccion, Coordenadas coordenadas){
         var destinoId = new DestinoId();
         appendChange(new DestinoCreado(destinoId,direccion,coordenadas)).apply();
+    }
+
+    public void actualizarTelefonoContacto(ContactoId contactoId,Telefono telefono){
+        appendChange(new TelefonoContactoActualizado(contactoId,telefono)).apply();
     }
 
 }

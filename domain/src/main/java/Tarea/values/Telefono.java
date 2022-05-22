@@ -10,7 +10,7 @@ public class Telefono implements ValueObject {
     }
 
     @Override
-    public Object value() {
+    public String value() {
         return value;
     }
 }

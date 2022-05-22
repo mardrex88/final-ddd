@@ -9,4 +9,10 @@ public class CourierId extends Identity {
         super(uuid);
     }
 
+    public CourierId() {
+    }
+
+    public static CourierId of(String id) {
+        return new CourierId(id);
+    }
 }
