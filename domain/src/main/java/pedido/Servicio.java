@@ -12,10 +12,6 @@ public class Servicio extends Entity<ServicioId> {
     protected String descripcion;
 
 
-    public Servicio(ServicioId entityId) {
-        super(entityId);
-    }
-
     public Servicio(ServicioId entityId, String nombre, Double precioKm, Precio precioBase, String descripcion) {
         super(entityId);
         this.nombre = nombre;
