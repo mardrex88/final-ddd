@@ -15,10 +15,11 @@ public class AgregarDestino extends Command {
 
     public AgregarDestino(TareaId tareaId,Direccion direccion, Coordenadas coordenadas) {
         this.tareaId = tareaId;
-
         this.direccion = direccion;
         this.coordenadas = coordenadas;
     }
+
+
 
     public Direccion getDireccion() {
         return direccion;

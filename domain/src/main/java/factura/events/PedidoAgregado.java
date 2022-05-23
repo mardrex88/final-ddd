@@ -11,26 +11,17 @@ public class PedidoAgregado extends DomainEvent {
     protected FacturaId facturaId;
     protected Cliente cliente;
 
-    public PedidoAgregado(String type, PedidoId pedidoId, FacturaId facturaId, Cliente cliente) {
-        super(type);
+
+    public PedidoAgregado( PedidoId pedidoId, FacturaId facturaId) {
+        super("PedidoAgregado");
         this.pedidoId = pedidoId;
         this.facturaId = facturaId;
-        this.cliente = cliente;
     }
-
-    public PedidoAgregado(String type) {
-        super(type);
-    }
-
     public PedidoId getPedidoId() {
         return pedidoId;
     }
 
     public FacturaId getFacturaId() {
         return facturaId;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
     }
 }

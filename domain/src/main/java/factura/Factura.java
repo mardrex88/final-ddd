@@ -38,6 +38,9 @@ public class Factura extends AggregateEvent<FacturaId> {
         return factura;
     }
 
+    public void agregarPedidoAFactura(PedidoId pedidoId, FacturaId facturaId){
+        appendChange(new PedidoAgregado(pedidoId,facturaId)).apply();
+    }
     public void agregarPedido(PedidoId pedidoId, Cliente cliente, FacturaId facturaId){
         appendChange(new FacturaCreada(pedidoId,cliente,facturaId)).apply();
     }

@@ -15,4 +15,6 @@ public class Courier extends Entity<CourierId> {
         this.vehiculo = vehiculo;
         this.nombre = nombre;
     }
+
+
 }

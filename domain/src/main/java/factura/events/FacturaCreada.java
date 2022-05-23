@@ -7,7 +7,6 @@ import pedido.values.PedidoId;
 
 
 public class FacturaCreada extends DomainEvent {
-
     protected Cliente cliente;
     protected PedidoId pedidoId;
     protected FacturaId faturaId;

@@ -1,15 +1,11 @@
 package pedido;
 
 import co.com.sofka.domain.generic.EventChange;
-import factura.Factura;
-import factura.events.FacturaCreada;
-import factura.values.FacturaId;
+
 import pedido.events.AsesorCreado;
 import pedido.events.CourierCreado;
 import pedido.events.PedidoCreado;
 import pedido.events.ServicioCreado;
-import pedido.values.Precio;
-
 import java.util.HashSet;
 
 public class PedidoEventChange extends EventChange {
@@ -40,6 +36,5 @@ public class PedidoEventChange extends EventChange {
         });
 
     }
-
 
 }
